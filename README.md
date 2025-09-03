@@ -1,9 +1,0 @@
-# Competitive-Programming-Codes
-
-# Competitive-Programming-Codes
-
-# CP-codes
-
-# CP-codes
-
-# CP-codes

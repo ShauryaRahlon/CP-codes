@@ -76,33 +76,22 @@ inline T Power(T a, T b)
 using namespace std;
 void solve()
 {
-    string s;
-    cin >> s;
-    int n = s.size();
-    set<char> st;
-    bool ok = true;
-    int k = 0;
+    int n;
+    cin >> n;
+    vi a(n);
+    for (int i = 0; i < n; ++i)
+        cin >> a[i];
+    map<long long, long long> freq;
     for (int i = 0; i < n; ++i)
     {
-        if (st.find(s[i]) == st.end())
-            st.insert(s[i]);
-        else
-        {
-            k = i;
-            break;
-        }
+        freq[a[i] - i]++;
     }
-    // check for pairwise distinct
-    // abca
-    for (int i = k; i < n; ++i)
+    long long ans = 0;
+    for (auto &p : freq)
     {
-        if (s[i] != s[i - k])
-        {
-            no;
-            return;
-        }
+        ans += p.second * (p.second - 1) / 2;
     }
-    yes;
+    cout << ans << endl;
 }
 int main()
 {
